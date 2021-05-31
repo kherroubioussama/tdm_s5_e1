@@ -37,14 +37,14 @@ class MainActivity : AppCompatActivity(),MyCommunicator {
 
         }
     }
-    override fun displayDetails(data: Module) {
+    override fun displayDetails(data: ContactDTO) {
         if(mIsDualPane){// If we are in Tablet
             val fragmentB = supportFragmentManager.findFragmentById(R.id.fragmentB) as FragmentB?
-            fragmentB?.displayDetails(data.intutile,data.duree,data.ens)
+            fragmentB?.displayDetails(data.name)
 
         }else{
-            val intent = Intent(this,DetailActivity::class.java)
-            intent.putExtra("module",data)
+            val intent = Intent(this,SmsActivity::class.java)
+            intent.putExtra("contact",data)
             startActivity(intent)
         }
     }

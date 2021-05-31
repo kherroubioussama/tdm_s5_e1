@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DetailActivity">
+    tools:context=".SmsActivity">
     <fragment
         android:id="@+id/fragmentB"
         android:name="com.example.tdm_s5_e1.FragmentB"

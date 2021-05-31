@@ -3,17 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".FragmentB"
-    android:orientation="vertical">
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/et_phone"
-        android:hint="phone number"
-        android:padding="10dp"
-        android:maxLength="14"
-        />
+    android:orientation="vertical"
+    tools:context=".AllFragment">
+
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -30,6 +22,5 @@
         android:id="@+id/bt_send"
         android:text="Send Sms"
         android:layout_marginTop="32dp"/>
-
 
 </LinearLayout>

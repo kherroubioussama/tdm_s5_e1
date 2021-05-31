@@ -5,7 +5,7 @@ import android.os.Bundle
 import androidx.appcompat.app.ActionBar
 import com.example.td4_exo4.Module
 
-class DetailActivity : AppCompatActivity() {
+class SmsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
@@ -15,9 +15,9 @@ class DetailActivity : AppCompatActivity() {
         actionBar!!.setDisplayHomeAsUpEnabled(true)
         actionBar!!.setDisplayShowHomeEnabled(true)*/
         var intent=intent
-        val module=intent.getSerializableExtra("module") as Module
+        val contact=intent.getSerializableExtra("contact") as ContactDTO
         // Pass the data to FragmentB to display it
         val fragmentB = supportFragmentManager.findFragmentById(R.id.fragmentB) as FragmentB?
-        fragmentB?.displayDetails(module.intutile,module.duree,module.ens)
+        fragmentB?.displayDetails(contact.mail)
     }
 }

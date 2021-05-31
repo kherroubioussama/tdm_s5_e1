@@ -13,7 +13,6 @@ import kotlin.properties.Delegates
 
 abstract class SettingActivity : AppCompatActivity() {
     private var defaultColor by Delegates.notNull<Int>()
-
     private lateinit var mainContainer: LinearLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,9 +20,12 @@ abstract class SettingActivity : AppCompatActivity() {
         setContentView(R.layout.activity_setting)
         mainContainer = findViewById(R.id.mainContainer)
         defaultColor = ContextCompat.getColor(this, R.color.purple_200)
-        /*loadData()*/
-        colorChange.setOnClickListener{
+        defaultColor = ContextCompat.getColor(this, R.color.purple_200)
+        loadData()
+        colorChange.setOnClickListener {
+
             openColorPicker()
+
         }
     }
 
@@ -35,23 +37,23 @@ abstract class SettingActivity : AppCompatActivity() {
 
             override fun onOk(dialog: AmbilWarnaDialog?, color:Int){
 
-                /*defaultColor = color
+                defaultColor = color
                 saveData()
-                mainContainer.setBackgroundColor(defaultColor)*/
+                mainContainer.setBackgroundColor(defaultColor)
             }
         })
         colorPicker.show()
 
     }
-    /*private fun loadData() {
+    private fun loadData() {
 
         val sharedPreferences = getSharedPreferences("sharedPrefs", Context.MODE_PRIVATE)
         val savedInt = sharedPreferences.getInt("INT_KEY",defaultColor)
         defaultColor = savedInt
         mainContainer.setBackgroundColor(savedInt)
-    }*/
+    }
 
-    /*private fun saveData() {
+    private fun saveData() {
 
         val sharedPreferences = getSharedPreferences("sharedPrefs", Context.MODE_PRIVATE)
         val editor = sharedPreferences.edit()
@@ -60,5 +62,5 @@ abstract class SettingActivity : AppCompatActivity() {
 
         }.apply()
         Toast.makeText(this,"Data Saved", Toast.LENGTH_SHORT).show()
-    }*/
+    }
 }
